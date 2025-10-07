@@ -1,6 +1,6 @@
-import { Context } from "@netlify/functions";
+import type { Context } from "@netlify/functions";
 
-export default async (req: Request, context: Context) => {
+export default async (_: Request, __: Context) => {
     const apiKey = Netlify.env.get("STEAM_API_KEY");
     const steamId = 76561198344247736n;
     const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json&include_appinfo=true&include_played_free_games=true`
@@ -19,7 +19,7 @@ export default async (req: Request, context: Context) => {
     return new Response(JSON.stringify(latestGame));
 }
 
-type Game = {
+export type Game = {
     appid: number;
     name: string;
     playtime_forever: number;
