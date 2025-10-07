@@ -4,10 +4,8 @@ export default async (_: Request, __: Context) => {
     const apiKey = Netlify.env.get("STEAM_API_KEY");
     const steamId = 76561198344247736n;
     const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json&include_appinfo=true&include_played_free_games=true`
-    console.log(url);
     const response = await fetch(url);
     const data = await response.json();
-    console.dir(data);
     const latestGame = data.response.games
         .map((game: Game) => {
             if (game.playtime_forever === 0) return null;
