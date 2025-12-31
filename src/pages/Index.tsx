@@ -25,8 +25,8 @@ export default function Index() {
       <p className="text-xl">
         when coding, i use c# at work, and go or typescript for my personal projects.
         my main interests are web development, devops and cloud computing.
-        i rarely write code publicly, but checkout my <a href="https://gitlab.com/axmc1"
-                                                         className="underline">gitlab</a>, maybe you get
+        i rarely write code publicly, but checkout my <a href="https://github.com/zykkl"
+                                                         className="underline">github</a>, maybe you get
         lucky.
       </p>
       <br/>
